@@ -1,0 +1,198 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.dnd {
+  background-color: #f14668;
+}
+.idle {
+  background-color: rgb(255, 166, 0);
+}
+.online {
+  background-color: #1e9227;
+}
+.offline {
+  background-color: #727272;
+}
+.status {
+  -webkit-animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: ping s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #5865F2;
+  border-radius: 10px;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+.MC_font {
+  font-family: Minecraft, Minercraftory;
+}
+:root {
+  --background-color: #23232a;
+  --midground-color: #484848;
+  --foreground-color: #8b8b8b;
+
+  --select-color: #fff;
+
+  --primary-color: #3b8526;
+  --primary-color-30: rgba(59, 133, 38, 0.3);
+  --primary-color-hover: #50ad2e;
+  --primary-color-hover-30: rgba(52, 165, 53, 0.3);
+  --primary-color-active: #4bbc22;
+  --primary-color-active-30: rgba(42, 100, 28, 0.3);
+  --primary-color-dark: #1d4d13;
+
+  --accent-color: #2e6be5;
+
+  --secondary-color: #d0d1d4;
+  --secondary-color-30: rgba(208, 209, 212, 0.3);
+  --secondary-color-hover: #f4f6f9;
+  --secondary-color-hover-30: rgba(244, 246, 249, 0.3);
+  --secondary-color-active: #ffffff;
+  --secondary-color-active-30: rgba(177, 178, 181, 0.3);
+  --secondary-color-dark: #58585a;
+
+  --success-color: #89ffb2;
+  --warning-color: #fcd58c;
+  --error-color: #ff8383;
+
+  --text-color: #fff;
+  --text-color-invert: #23232a;
+
+  --bezel-color: rgba(0, 0, 0, 0.4);
+  --bezel-color-semi: rgba(128, 128, 128, 0.4);
+  --bezel-color-invert: rgba(255, 255, 255, 0.4);
+}
+
+.MC_Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--button-text-color);
+  border: none;
+  position: relative;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 0 0 4px 0;
+  border-top-color: transparent;
+  border-bottom-color: var(--button-border-color);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  background-color: var(--button-bg-color);
+  background-clip: padding-box;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-family: Minecraft, Minercraftory;
+}
+
+.MC_Button:hover {
+  background-color: var(--button-bg-hover-color);
+}
+
+.MC_Button_active:hover,
+.MC_Button:active:hover {
+  border-bottom-color: var(--button-bg-hover-color);
+}
+
+.MC_Button:focus {
+  outline: none;
+}
+
+.MC_Button:focus::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 8px);
+  box-shadow: inset 0 0 0 1px var(--text-color);
+}
+
+.MC_Button_active::after,
+.MC_Button:active::after {
+  display: none;
+}
+
+.MC_Button_active,
+.MC_Button:active {
+  border-bottom-color: transparent;
+  outline: none;
+  border-width: 4px 0 0;
+  border-bottom-color: var(--button-bg-color);
+  background-color: var(--button-bg-active-color);
+  box-shadow: inset 0px -2px 0px 0px var(--bezel-color-invert),
+    inset -2px 0px 0px 0px var(--bezel-color-invert),
+    inset 0px 2px 0px 0px var(--bezel-color),
+    inset 2px 0px 0px 0px var(--bezel-color);
+}
+
+.MC_Button_primary {
+  box-shadow: inset 0px -2px 0px 0px var(--bezel-color),
+    inset -2px 0px 0px 0px var(--bezel-color),
+    inset 0px 2px 0px 0px var(--bezel-color-invert),
+    inset 2px 0px 0px 0px var(--bezel-color-invert);
+  --button-bg-color: var(--primary-color);
+  --button-bg-hover-color: var(--primary-color-hover);
+  --button-bg-active-color: var(--primary-color-active);
+  --button-text-color: var(--text-color);
+  --button-text-hover-color: var(--text-color);
+  --button-text-active-color: var(--text-color);
+  --button-border-color: var(--primary-color-dark);
+}
+
+.MC_Button_clear {
+  border: none;
+  padding: 0.5rem;
+  --button-bg-color: transparent;
+  --button-bg-hover-color: rgba(244, 246, 249, 0.2);
+  --button-bg-active-color: rgba(244, 246, 249, 0.1);
+  --button-text-color: var(--text-color);
+  --button-text-hover-color: var(--text-color);
+  --button-text-active-color: var(--text-color);
+  --button-border-color: transparent;
+}
+
+.MC_Button_clear:focus::after {
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+
+.MC_Button_secondary {
+  --button-border-color: var(--secondary-color-dark);
+  --button-bg-color: var(--secondary-color);
+  --button-bg-hover-color: var(--secondary-color-hover);
+  --button-bg-active-color: var(--secondary-color-active);
+  --button-text-color: var(--text-color-invert);
+  --button-text-hover-color: var(--text-color-invert);
+  --button-text-active-color: var(--text-color-invert);
+}
+input {
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  transition: 0.2s;
+}
+
+textarea {
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  transition: 0.2s;
+}
+
